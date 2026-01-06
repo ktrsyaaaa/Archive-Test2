@@ -11,8 +11,8 @@
 
     // ---- MODEL FROM URL (ARCHIVE LOGIC) ----
     const params = new URLSearchParams(window.location.search);
-    const modelName = params.get("model") || "model.glb"; // fallback
-    const modelPath = `models/${modelName}`;
+    const modelPath = params.get("model") || "models/scan_01.glb";
+
 
     console.log("Loading model:", modelPath);
 
@@ -285,3 +285,4 @@ else {
     }
 
     animate();
+
