@@ -14,10 +14,11 @@
     const modelPath = params.get("model") || "models/scan_01.glb";
 
     const scanNameUI = document.getElementById("scan-name");
-    
+
+    if (scanNameUI) {
     const fileName = modelPath.split("/").pop();
-    
     scanNameUI.textContent = fileName;
+    }
 
 
     console.log("Loading model:", modelPath);
