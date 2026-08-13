@@ -18,6 +18,11 @@
 
     
     const container = document.getElementById("viewer");
+    const loading = document.getElementById("loading");
+
+    const dimensionsUI = document.getElementById("dimensions");
+    const distortionUI = document.getElementById("distortion");
+    const timeUI = document.getElementById("time");
 
     // ---- SETUP ----
     const scene = new THREE.Scene();
@@ -68,6 +73,13 @@
         root.traverse(obj => console.log(obj.name));
 
         mesh1 = root.getObjectByName("mesh_1");
+
+        controls.update();
+
+        // Hide loading screen
+        loading.style.display = "none";
+
+        document.getElementById("mouse-controls").style.display = "block";
 
 // ---- CASE 1: REAL SUBMESH EXISTS ----
 if (mesh1 && mesh1.isMesh) {
@@ -121,6 +133,9 @@ else {
         box.getSize(size);
         box.getCenter(center);
 
+        dimensionsUI.textContent =
+        `${size.x.toFixed(2)} × ${size.y.toFixed(2)} × ${size.z.toFixed(2)}`;
+
         root.position.sub(center);
 
         const maxDim = Math.max(size.x, size.y, size.z);
@@ -140,6 +155,9 @@ else {
 
             // map time 0–59 → -1 to 1
             const timeDistortion = (minutes / 59) * 2 - 1;
+
+            distortionUI.textContent = timeDistortion.toFixed(2);
+            timeUI.textContent = now.toLocaleTimeString("en-GB");
 
             // scale distortion proportionally to scan height
             const modelHeight = size.y;
