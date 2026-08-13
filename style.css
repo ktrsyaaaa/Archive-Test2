@@ -1,0 +1,121 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+}
+
+
+/* ---------------- VIEWER ---------------- */
+
+#viewer {
+    position: fixed;
+    inset: 0;
+}
+
+
+/* ---------------- LOADING ---------------- */
+
+#loading {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: black;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+
+    z-index: 9999;
+}
+
+
+/* ---------------- TOP LEFT ---------------- */
+
+#archive-info {
+    position: fixed;
+
+    top: 25px;
+    left: 25px;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+
+    z-index: 100;
+}
+
+
+/* ---------------- MOUSE CONTROLS ---------------- */
+
+#mouse-controls {
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    width: 120px;
+    height: auto;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    display: none;
+}
+
+
+/* ---------------- BOTTOM LEFT ---------------- */
+
+#model-info {
+    position: fixed;
+
+    left: 25px;
+    bottom: 25px;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    z-index: 100;
+}
+
+
+/* individual information blocks */
+
+.info-section {
+    margin-top: 18px;
+}
+
+.info-section:first-child {
+    margin-top: 0;
+}
+
+
+/* labels such as DIMENSIONS */
+
+.label {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-bottom: 3px;
+}
+
+
+/* actual values */
+
+#dimensions,
+#distortion,
+#time {
+    font-size: 14px;
+}
