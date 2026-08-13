@@ -13,6 +13,12 @@
     const params = new URLSearchParams(window.location.search);
     const modelPath = params.get("model") || "models/scan_01.glb";
 
+    const scanNameUI = document.getElementById("scan-name");
+    
+    const fileName = modelPath.split("/").pop();
+    
+    scanNameUI.textContent = fileName;
+
 
     console.log("Loading model:", modelPath);
 
