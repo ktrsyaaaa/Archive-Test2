@@ -42,7 +42,7 @@ body {
 
 #archive-info {
     position: fixed;
-    padding-top: 12rem;
+
     top: 25px;
     left: 25px;
 
@@ -60,7 +60,7 @@ body {
 
 #mouse-controls {
     position: fixed;
-    padding-top: 12rem;
+
     top: 25px;
     right: 25px;
 
