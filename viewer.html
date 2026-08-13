@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Archive Viewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            background: black;
-        }
-
-        #viewer {
-            position: fixed;
-            inset: 0;
-        }
-    </style>
 </head>
+
 <body>
 
+<div id="loading">
+    Loading...
+</div>
+
 <div id="viewer"></div>
+
+
+<!-- TOP LEFT -->
+<div id="archive-info">
+    <div>ARCHIVE</div>
+    <div>SCAN 03</div>
+</div>
+
+
+<!-- TOP RIGHT -->
+<img id="mouse-controls" src="ControlUI.png" alt="Mouse controls">
+
+
+<!-- BOTTOM LEFT -->
+<div id="model-info">
+
+    <div class="info-section">
+        <div class="label">DIMENSIONS</div>
+        <div id="dimensions">—</div>
+    </div>
+
+    <div class="info-section">
+        <div class="label">TEMPORAL DISTORTION</div>
+        <div id="distortion">—</div>
+    </div>
+
+    <div class="info-section">
+        <div class="label">TIME</div>
+        <div id="time">—</div>
+    </div>
+
+</div>
+
 
 <script type="module" src="viewer.js"></script>
 
